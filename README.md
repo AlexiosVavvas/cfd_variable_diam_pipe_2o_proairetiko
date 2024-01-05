@@ -21,3 +21,5 @@ Or run everything, both calculations and GIF generation by running:
 Libraries Needed:
     - numpy
     - matplotlib
+
+![Flow Solution](https://github.com/AlexiosVavvas/cfd_variable_diam_pipe_2o_proairetiko/blob/1c1f451ada9649ce9d775ed44f0572d1e66efa93/results/final1/output_animation.gif)
