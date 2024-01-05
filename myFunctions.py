@@ -216,3 +216,13 @@ def resultingSolBoundaries(folder_filename, N_TIME_STEPS, SKIP_FRAMES):
         p_high = np.max([p_high, np.max(p)])
     
     return rho_low, rho_high, u_low, u_high, p_low, p_high
+
+import os
+def checkOrCreateFolderResults(folder_path):
+    # Check if the folder exists
+    if not os.path.exists(folder_path):
+        # Create the folder if it does not exist
+        os.makedirs(folder_path)
+        print(f"Folder {folder_path} created successfully in the current directory.")
+    else:
+        print(f"Folder {folder_path} already exists in the current directory.")

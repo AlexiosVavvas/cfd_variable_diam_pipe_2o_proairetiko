@@ -1,16 +1,18 @@
 import numpy as np
 from myFunctions import *
-import os
 from constantsToUse import *
 
+checkOrCreateFolderResults("results")
+checkOrCreateFolderResults("results/current_run_csvs")
+
 # Remove any previous results
-os.system("rm results/current_run_csvs/*.csv")
+# os.system("rm results/current_run_csvs/*.csv")
 
 # --------------------------------
 N = 60                     # Number of grid points
 delta_t = 3e-6             # Time step
 SKIP_FRAMES = 30           # Number of frames to skip when saving animation
-SKIP_PRINTS = 5           # Number of frames to skip when saving animation
+SKIP_PRINTS = 10           # Number of frames to skip when saving animation
 CONV_E = 3e-2              # Convergence criteria
 N_TIME_STEPS_MAX = 50000   # Number of time steps to solve./
 
@@ -18,9 +20,9 @@ N_TIME_STEPS_MAX = 50000   # Number of time steps to solve./
 # plotAndSaveS(a, b, c, k, L)
 
 # Initial Conditions
-P0 = 6.7e5          # [Pa] - Aerofilakio
+P0 = 4.7e4          # [Pa] - Aerofilakio
 T0 = 275            # [K]  - Aerofilakio
-Pout = 3e5          # [Pa] - Outlet
+Pout = 1.5e4        # [Pa] - Outlet
 Patm = Pout         # [Pa] - Atmospheric
 Tatm = 273.15       # [K]  - Atmospheric
 # --------------------------------
@@ -52,6 +54,7 @@ i = 0
 
 # Save initial state U_P transposed 
 np.savetxt(f"results/current_run_csvs/U_P_init.csv", np.hstack((np.linspace(0, 1, N).reshape(N, 1), np.transpose(U_P))), delimiter=",")
+np.savetxt("results/INIT_CONDITIONS.csv", np.array([["P0", "T0", "Pout"], [P0, T0, Pout]]), delimiter=",", fmt="%s")
 
 # Solving in Time
 conv_error = 1

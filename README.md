@@ -17,3 +17,7 @@ turn_anim_frames_to_gif.py does what it sais to do
 
 Or run everything, both calculations and GIF generation by running:
 	./run.sh
+
+Libraries Needed:
+    - numpy
+    - matplotlib
