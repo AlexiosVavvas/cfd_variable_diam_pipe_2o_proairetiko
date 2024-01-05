@@ -8,7 +8,6 @@ a = 2*k
 b = 0.92 
 c = 2-b 
 
-L = 1    # [m] - Length of the tube
-
+L = 2.2    # [m] - Length of the tube
 
 

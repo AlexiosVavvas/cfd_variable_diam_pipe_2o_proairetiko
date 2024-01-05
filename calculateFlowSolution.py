@@ -11,20 +11,20 @@ checkOrCreateFolderResults("results/animation")
 os.system("rm results/current_run_csvs/*.csv")
 
 # --------------------------------
-N = 70                     # Number of grid points
-delta_t = 2e-6             # Time step
+N = 200                    # Number of grid points
+delta_t = 1e-6             # Time step
 SKIP_FRAMES = 30           # Number of frames to skip when saving animation
-SKIP_PRINTS = 10           # Number of frames to skip when saving animation
-CONV_E = 3e-2              # Convergence criteria
+SKIP_PRINTS = 2            # Number of frames to skip when saving animation
+CONV_E = 3.5e-2              # Convergence criteria
 N_TIME_STEPS_MAX = 50000   # Number of time steps to solve./
 
 # Plot S(x), R(x) and Save them
 plotAndSaveS(a, b, c, k, L)
 
 # Initial Conditions
-P0 = 6.4e4           # [Pa] - Aerofilakio
+P0 = 4e5             # [Pa] - Aerofilakio
 T0 = 275             # [K]  - Aerofilakio
-Pout = 2.5e4         # [Pa] - Outlet
+Pout = 2e5         # [Pa] - Outlet
 Patm = Pout          # [Pa] - Atmospheric
 Tatm = 273.15        # [K]  - Atmospheric
 # --------------------------------
