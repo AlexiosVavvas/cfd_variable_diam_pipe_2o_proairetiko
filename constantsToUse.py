@@ -6,9 +6,9 @@
 k = 0.13
 a = 2*k
 b = 0.92 
-c = 1.08 
+c = 2-b 
 
-L = 2.3   # [m] - Length of the tube
+L = 1    # [m] - Length of the tube
 
 
 

@@ -2,29 +2,31 @@ import numpy as np
 from myFunctions import *
 from constantsToUse import *
 
+# Create folders if they don't exist
 checkOrCreateFolderResults("results")
 checkOrCreateFolderResults("results/current_run_csvs")
+checkOrCreateFolderResults("results/animation")
 
 # Remove any previous results
-# os.system("rm results/current_run_csvs/*.csv")
+os.system("rm results/current_run_csvs/*.csv")
 
 # --------------------------------
-N = 60                     # Number of grid points
-delta_t = 3e-6             # Time step
+N = 70                     # Number of grid points
+delta_t = 2e-6             # Time step
 SKIP_FRAMES = 30           # Number of frames to skip when saving animation
 SKIP_PRINTS = 10           # Number of frames to skip when saving animation
 CONV_E = 3e-2              # Convergence criteria
 N_TIME_STEPS_MAX = 50000   # Number of time steps to solve./
 
 # Plot S(x), R(x) and Save them
-# plotAndSaveS(a, b, c, k, L)
+plotAndSaveS(a, b, c, k, L)
 
 # Initial Conditions
-P0 = 4.7e4          # [Pa] - Aerofilakio
-T0 = 275            # [K]  - Aerofilakio
-Pout = 1.5e4        # [Pa] - Outlet
-Patm = Pout         # [Pa] - Atmospheric
-Tatm = 273.15       # [K]  - Atmospheric
+P0 = 6.4e4           # [Pa] - Aerofilakio
+T0 = 275             # [K]  - Aerofilakio
+Pout = 2.5e4         # [Pa] - Outlet
+Patm = Pout          # [Pa] - Atmospheric
+Tatm = 273.15        # [K]  - Atmospheric
 # --------------------------------
 
 # Grid Definition
@@ -52,9 +54,10 @@ U_P[2, N-1] = Pout           # p Outlet
 t = 0
 i = 0
 
-# Save initial state U_P transposed 
+# Save initial state, initial conditions and shape constants
 np.savetxt(f"results/current_run_csvs/U_P_init.csv", np.hstack((np.linspace(0, 1, N).reshape(N, 1), np.transpose(U_P))), delimiter=",")
 np.savetxt("results/INIT_CONDITIONS.csv", np.array([["P0", "T0", "Pout"], [P0, T0, Pout]]), delimiter=",", fmt="%s")
+np.savetxt("results/SHAPE_CONSTS.csv", np.array([["k", "a", "b", "c", "L"], [k, a, b, c, L]]), delimiter=",", fmt="%s")
 
 # Solving in Time
 conv_error = 1
