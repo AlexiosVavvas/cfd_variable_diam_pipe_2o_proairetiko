@@ -12,40 +12,30 @@ This guide explains how to calculate flow solutions, visualize results, and gene
 
 2. **Install Required Libraries**:
    Ensure you have the following Python libraries installed:
-   \`\`\`bash
-   numpy
-   matplotlib
-   \`\`\`
+   `numpy `
+   `matplotlib`
 
 ## Running the Calculations
 
 1. **Calculate Flow Solution**:
    Run the calculation with the following command:
-   \`\`\`bash
-   python calculateFlowSolution.py
-   \`\`\`
+   `python calculateFlowSolution.py`
 
 2. **Temporary Visualization**:
    To quickly visualize the results, use:
-   \`\`\`bash
-   ./animate.sh
-   \`\`\`
+   `./animate.sh`
 
 ## Generating Animation
 
 1. **Create Animation Frames and GIF**:
    Execute the following script to generate animation frames and convert them into a GIF:
-   \`\`\`bash
-   ./generate_animation_frames.sh
-   \`\`\`
+   `./generate_animation_frames.sh`
    - `multi_animate.py` is the main file that handles the drawing of each frame.
    - `turn_anim_frames_to_gif.py` converts the frames into a GIF.
 
 2. **Comprehensive Run Script**:
    Alternatively, to run both the calculations and GIF generation, use:
-   \`\`\`bash
-   ./run.sh
-   \`\`\`
+   `./run.sh`
 
 Follow these steps to successfully calculate flow solutions and generate animations.
 
