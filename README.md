@@ -1,5 +1,3 @@
-# cfd_variable_diam_pipe_2o_proairetiko
-
 # Flow Solution Calculation and Visualization
 
 This guide explains how to calculate flow solutions, visualize results, and generate animations in GIF format.
